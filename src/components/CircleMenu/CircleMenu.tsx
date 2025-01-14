@@ -1,16 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./CircleMenu.css";
 
-const CircleMenu = () => {
+interface CircleMenuProps {
+  startYear: number;
+  endYear: number;
+  onCategoryChange: (category: string | null) => void;
+}
+
+const CircleMenu: React.FC<CircleMenuProps> = ({
+  startYear,
+  endYear,
+  onCategoryChange,
+}) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const [selectedLabel, setSelectedLabel] = useState<string | null>("Спорт");
   const labels = [
     "Наука",
     "Кино",
     "Спорт",
-    "Литература",
     "Искусство",
-    "Технологии",
+    "Технологии и ИТ",
+    "Экология",
   ];
 
   useEffect(() => {
@@ -33,13 +43,14 @@ const CircleMenu = () => {
 
   const handleItemClick = (label: string) => {
     setSelectedLabel(label);
+    onCategoryChange(label);
   };
 
   return (
-    <div className="">
+    <div className="circle-container">
       <div className="circle-years">
-        <p className="circle-start-year">2015</p>
-        <p className="circle-end-year">2022</p>
+        <p className="circle-start-year">{startYear}</p>
+        <p className="circle-end-year">{endYear}</p>
       </div>
       <div className="circle-menu" ref={menuRef}>
         {labels.map((label, index) => (

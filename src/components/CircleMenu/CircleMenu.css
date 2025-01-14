@@ -67,10 +67,10 @@
     left: 150%;
     transform: translateY(-50%);
     white-space: nowrap;
-    background-color: white;
+    background-color: none;
     color: #42567A;
-    padding: 8px;
-    border-radius: 8px;
+    top: -5px;
+    padding-left: 5px;
     font-family: PT Sans;
     font-size: 6px;
     font-weight: 700;
