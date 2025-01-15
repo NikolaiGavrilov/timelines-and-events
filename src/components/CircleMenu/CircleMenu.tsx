@@ -14,11 +14,12 @@ const CircleMenu: React.FC<CircleMenuProps> = ({
 }) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const [selectedLabel, setSelectedLabel] = useState<string | null>("Спорт");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const labels = [
     "Наука",
     "Кино",
     "Спорт",
-    "Искусство",
+    "Музыка",
     "Технологии и ИТ",
     "Экология",
   ];
@@ -41,7 +42,7 @@ const CircleMenu: React.FC<CircleMenuProps> = ({
     }
   }, []);
 
-  const handleItemClick = (label: string) => {
+  const handleItemClick = (label: string, index: number) => {
     setSelectedLabel(label);
     onCategoryChange(label);
   };
@@ -56,10 +57,18 @@ const CircleMenu: React.FC<CircleMenuProps> = ({
         {labels.map((label, index) => (
           <div
             key={index}
-            className={`menu-item ${selectedLabel === label ? "selected" : ""}`}
+            className={`menu-item ${
+              selectedLabel === label ? "selected" : ""
+            } ${hoveredIndex === index ? "hovered" : ""}`}
             data-label={label}
-            onClick={() => handleItemClick(label)}
-          />
+            onClick={() => handleItemClick(label, index)}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {(hoveredIndex === index || selectedLabel === label) && (
+              <span className="menu-item-index">{index + 1}</span>
+            )}
+          </div>
         ))}
       </div>
     </div>

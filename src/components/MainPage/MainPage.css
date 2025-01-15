@@ -8,7 +8,7 @@
 .content::before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 480px;
     left: 0;
     right: 0;
     height: 1px;
@@ -21,7 +21,7 @@
   .content::after {
     content: "";
     position: absolute;
-    left: 50%;
+    left: 720px;
     top: 0;
     bottom: 0;
     width: 1px;

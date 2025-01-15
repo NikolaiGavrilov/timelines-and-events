@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import "./MainPage.css";
 import Slider from "../Slider/Slider";
 import CircleMenu from "../CircleMenu/CircleMenu";
+import PeriodSlider from "../PeriodSlider/PeriodSlider";
 
 const MainPage = () => {
-  const startYear = 2015;
-  const endYear = 2023;
-    const [selectedCategory, setSelectedCategory] = useState<string | null>("Спорт");
+  const [startYear, setStartYear] = useState(2015);
+  const [endYear, setEndYear] = useState(2022);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>("Спорт");
 
    const handleCategoryChange = (category: string | null) => {
      setSelectedCategory(category);
    };
+
+  const handleTimePeriodChange = (startYear: number, endYear: number) => {
+      setStartYear(startYear);
+      setEndYear(endYear);
+  };
 
   return (
     <div className="content">
@@ -27,6 +33,7 @@ const MainPage = () => {
           endYear={endYear}
           onCategoryChange={handleCategoryChange}
         />
+        <PeriodSlider onTimePeriodChange={handleTimePeriodChange}/>
       <Slider
         startYear={startYear}
         endYear={endYear}
