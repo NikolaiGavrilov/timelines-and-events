@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./CircleMenu.css";
+import "./CircleMenu.scss";
 
 interface CircleMenuProps {
   startYear: number;

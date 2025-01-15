@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./MainPage.css";
+import "./MainPage.scss";
 import Slider from "../Slider/Slider";
 import CircleMenu from "../CircleMenu/CircleMenu";
 import PeriodSlider from "../PeriodSlider/PeriodSlider";

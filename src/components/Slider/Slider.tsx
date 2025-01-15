@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "./Slider.css";
+import "./Slider.scss";
 
 interface SliderProps {
   startYear: number;
