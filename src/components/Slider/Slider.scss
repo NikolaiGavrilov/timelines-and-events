@@ -1,74 +1,119 @@
 @import "./../_variables.scss";
 .slider {
-    position: absolute;
-    top: 841px;
-    left: 80px;
-    display: block;
-    max-width: 1280px;
-    justify-self: center;
-    overflow: visible;
+  position: absolute;
+  top: 841px;
+  left: 80px;
+  display: block;
+  max-width: 1280px;
+  justify-self: center;
+  overflow: visible;
 }
 
 .slider-content {
-   
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    max-width: 320px;
-    max-height: 135px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 320px;
+  max-height: 135px;
 }
 
 .slider-heading {
+  font-family: Bebas Neue;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: $slider-decorative-color;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-text {
+  font-family: PT Sans;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: $primary-color;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: $slider-decorative-color;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 15px 0px #3877ee1a;
+  width: 40px;
+  height: 40px;
+  font-weight: bold;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 12px;
+}
+.swiper-button-prev {
+  margin-top: 41px;
+}
+
+.swiper-button-next {
+  margin-top: 41px;
+}
+
+.swiper-button-disabled {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  .slider {
+    position: absolute;
+    top: 313px;
+    left: 20px;
+    display: block;
+    max-width: 600px;
+    justify-self: center;
+    overflow: hidden;
+  }
+
+  .slider-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    max-width: 200px;
+    max-height: 135px;
+  }
+
+  .slider-heading {
     font-family: Bebas Neue;
-    font-size: 25px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 19.2px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: $slider-decorative-color;
     margin: 0;
     padding: 0;
-}
+  }
 
-.slider-text {
+  .slider-text {
     font-family: PT Sans;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 30px;
+    line-height: 20.3px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     color: $primary-color;
-}
+  }
 
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: $slider-decorative-color; 
-  background-color: #FFFFFF; 
-  border-radius: 50%; 
-  box-shadow: 0px 0px 15px 0px #3877EE1A;
-  width: 40px; 
-  height: 40px; 
-  font-weight: bold;
-  transform: translateY(-50%);
-}
-
-  .swiper-button-prev::after,
- .swiper-button-next::after{
-     font-size: 12px;
- }
-.swiper-button-prev {
-    margin-top: 41px;
-    
-}
-
-.swiper-button-next {
-    margin-top: 41px;
-
-}
-
-.swiper-button-disabled {
+  .slider .swiper-button-prev,
+  .slider .swiper-button-next {
     display: none;
+  }
 }

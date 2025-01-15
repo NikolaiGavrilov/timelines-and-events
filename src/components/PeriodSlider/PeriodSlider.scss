@@ -67,3 +67,33 @@
   @include center-flex;
   height: 100%;
 }
+
+@media (max-width: 320px) {
+  .time-period-swiper {
+    @include center-flex;
+    position: absolute;
+    top: 413px;
+    left: 20px;
+    width: 58px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $primary-color;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #42567a80;
+    @include center-flex;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 6px;
+    color: $primary-color;
+  }
+}

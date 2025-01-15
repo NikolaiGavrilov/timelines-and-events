@@ -120,3 +120,28 @@
   background-color: $background-color;
   transform: none;
 }
+
+@media (max-width: 320px) {
+  .circle-menu {
+    display: none;
+  }
+
+  .circle-years {
+    position: absolute;
+    top: 163px;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .circle-start-year {
+    font-size: 56px;
+    line-height: 72px;
+  }
+
+  .circle-end-year {
+    font-size: 56px;
+    line-height: 72px;
+  }
+}
